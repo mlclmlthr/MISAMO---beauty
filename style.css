@@ -1,0 +1,887 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/brittany-signature');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.ham {
+    display: none;
+}
+
+body {
+    
+    background-color: #f5f5f5;
+    font-family: "Montserrat" , sans-serif;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    user-select: none;
+} 
+.nav__content {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0.5rem ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.logo {
+    font-family: 'Brittany Signature';
+    text-decoration: none;
+    cursor:default;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: 99;
+    width: 100%;
+    border-bottom: 1px solid white;
+
+}
+#navbar {
+    transition: background-color 0.3s ease;
+}
+#navbar.scrolled {
+    background-color: rgba(192, 192, 192, 0.6); 
+    border: 0;
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    
+}
+nav .checkbox {
+    display: none;
+}
+
+.ham  {
+    display: none;
+}
+nav .checkbox i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    transition: left 0.3s;
+}
+  
+ul li a {
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: 0.3s;
+}
+  
+ul li a.one:hover,
+ul li a.two:hover,
+ul li a.three:hover,
+ul li a.four:hover {
+    color: black;
+    text-decoration: underline;
+     
+}
+
+.left {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 0.1rem;
+    text-decoration: none;
+}
+.left a {
+    padding: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: 0.5s;
+}
+.left a:hover {
+    transform: scale(1.1);
+}
+
+.trigger_search {
+    border: 0;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+}
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.search .input {
+    border-radius: 20px;
+    outline: 0;
+    transition: width 0.25s ease-in-out, padding 0.25s ease-in-out;
+    padding: 5px;
+    width: 0;
+    border: solid 1px transparent;
+    background-color: transparent;
+    flex-shrink: 0;
+    color: white;
+    
+    
+}
+
+.search .input-open{
+    width: 30vh;
+    padding: 5px;
+    border-color: white;
+    background-color: transparent;
+}
+
+.dropdown_shop {
+    display: none; 
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 20%;
+    background-color: white; 
+    width: 400px;
+    border-bottom-right-radius: 8px; 
+    border-bottom-left-radius: 8px; ;
+    padding: 10px; 
+    z-index: 1000; 
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.3s, visibility 0.3s; 
+    color: black;
+}
+.nav__content li:hover .dropdown_shop {
+    display: flex; 
+    opacity: 1; 
+    visibility: visible;
+}
+
+
+.dropdown_shop ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.dropdown_shop ul li {
+    width: 100%; 
+    padding: 10px;
+     
+}
+
+
+.dropdown_shop ul li a {
+    text-decoration: none;
+    font-weight: 500; 
+    display: block;
+    padding: 10px;
+    border-radius: 4px; 
+   
+}
+
+.dropdown_shop ul li a:hover {
+    cursor: pointer;
+}
+
+.nav__content li {
+    position: relative;
+} 
+
+.landing-page {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-image: url(library/mina.jpeg);
+    background-position: center top; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    animation: change 10s infinite ease-in-out; 
+    padding: 2rem; 
+    box-sizing: border-box;
+
+
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative; 
+    z-index: 98;
+    font-family: 'EB Garamond', serif;
+    color: white;
+    transition: color 1s ease-in-out;
+    max-width: 600px; 
+    margin-left: -55%; 
+    max-height: 1000px;
+    margin-top: 30%;
+}
+
+.content h1 {
+    font-weight: 100;
+    font-size: 5vw; 
+    text-align: left;
+    margin: 0;
+    line-height: 90%;
+    width: 70%;
+}
+
+.content p {
+    font-weight: 100;
+    font-size: 1.5vw; 
+    text-align: left;
+    margin-top: 1rem;
+    width: 60%;
+}
+
+.content a {
+    position: relative; 
+    margin-top: 2rem;
+    font-weight: 300;
+    font-family: 'Montserrat';
+    text-decoration: none;
+    color: inherit; 
+    text-align: left;
+    font-size: 2vw;
+    padding: 1rem;
+    border: solid 2px white;
+    border-left: none;
+    overflow: hidden; 
+    
+}
+
+.content a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: white; 
+    z-index: -1; 
+    transition: width 0.3s ease-in-out;
+}
+
+.content a:hover::before {
+    width: 100%;
+}
+
+.content a:hover {
+    color: black; 
+}
+
+@keyframes change {
+    0% {
+        background-image: url(library/mina.jpeg);
+        
+    }
+    7.69% { 
+        background-image: url(library/sana.jpeg);
+        
+    }
+    38.46% { 
+        background-image: url(library/sana.jpeg);
+    }
+    46.15% { 
+        background-image: url(library/momo.jpeg);
+    }
+    76.92% { 
+        background-image: url(library/momo.jpeg);
+    }
+    84.61% { 
+        background-image: url(library/mina.jpeg);
+        
+    }
+    100% { 
+        background-image: url(library/mina.jpeg);
+    }
+
+}
+
+.shopping {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.shop_content h1 {
+  font-size: 20px;
+  margin-top: 5%;
+  font-weight: 500;
+}
+.shop_content h2 {
+    font-size: 60px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-family: 'EB Garamond';
+    font-style: italic;
+}
+.shop_content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.shop_content a.shops    {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000; 
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 40px;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+
+.trends {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(500px, 1fr)); 
+  overflow-x: auto; 
+  padding: 10px;
+  scrollbar-width: none; 
+  scroll-behavior: smooth;
+}
+
+.trends.active {
+    cursor: grabbing;
+}
+  
+.trends {
+    cursor: grab;
+}
+
+.shop-item {
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; 
+  
+}
+
+.shop-item img {
+  width: 70%; 
+  height: auto; 
+  border-radius: 5px;
+  transition: filter 0.3s ease; 
+}
+
+.shop-item .title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0 5px; 
+}
+
+.shop-item .price {
+  font-size: 14px;
+  color: #777; 
+}
+
+.shop-item:hover img {
+  filter: brightness(70%); 
+  cursor: pointer; 
+}
+
+
+.overlay {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+  color: #fff; 
+  text-align: center; 
+}
+
+.shop-item:hover .overlay {
+  opacity: 1; 
+}
+
+
+.overlay .shop:hover {
+  background-color: navajowhite; 
+  color: #000;
+}
+
+a.shop    {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent; 
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 40px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: 2px solid wheat;
+}
+
+.browsing {
+    padding: 50px 0;
+    text-align: center;
+    position: relative;
+}
+
+.cover {
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding: 0; 
+    box-sizing: border-box;
+    
+}
+
+.cover img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.cover_content {
+    position: relative; 
+    padding: 2rem;
+    box-sizing: border-box;
+    text-align: center; 
+   
+}
+
+.cover_content h1 {
+    font-size: 20px;
+    margin-top: 5%; 
+    font-weight: 500;
+}
+
+.cover_content h2 {
+    font-size: 60px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-family: 'EB Garamond';
+    
+}
+.cover_content .italic {
+    font-style: italic;
+}
+.cover_content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.mina_collection {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+    align-items: center; 
+    padding: 5%; 
+    max-width: 100%; 
+    margin: 0 auto; 
+    border-bottom: 2px solid black;
+}
+
+.mina_collection .text {
+    text-align: left; 
+}
+
+.mina_collection h1 {
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    font-family: 'EB Garamond';
+}
+
+.mina_collection p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    width: 70%;
+    text-align: left;
+}
+
+.mina_collection img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}   
+.mina_collection a {
+    background-color: transparent;
+    padding: 15px;
+    color: #B8860B;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #B8860B;
+    
+}
+.mina_image {
+    display: grid;
+    place-items: center;
+}
+
+.mina_image img {
+    transition: opacity 0.6 ease;
+    border: 1px solid #B8860B;
+}
+
+.mina_image img:nth-child(1) {
+  grid-area: 1 / 1;
+  z-index: 4; 
+}
+
+.mina_image img:nth-child(2) {
+  grid-area: 1 / 1; 
+  z-index: 3; 
+  position: relative;
+}
+.mina_image img:nth-child(3) {
+    grid-area: 1 / 1; 
+    z-index: 2; 
+    position: relative;
+}
+.mina_image img:nth-child(4) {
+    grid-area: 1 / 1; 
+    z-index: 1; 
+    position: relative;
+}
+
+.mina_image img {
+    width: 100%; 
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    animation: fade 16s infinite; 
+}
+
+.mina_image img:nth-child(1) {
+    z-index: 4;
+    animation-delay: 0s;
+}
+
+.mina_image img:nth-child(2) {
+    z-index: 3;
+    animation-delay: 4s;
+}
+.mina_image img:nth-child(3) {
+    z-index: 2;
+    animation-delay: 8s;
+}
+.mina_image img:nth-child(4) {
+    z-index: 1;
+    animation-delay: 12s;
+}
+@keyframes fade {
+    0% { opacity: 0; }     
+    6.25% { opacity: 1; }  
+    25% { opacity: 1; }    
+    31.25% { opacity: 0; } 
+    100% { opacity: 0; }   
+}
+.sana_collection {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+    align-items: center; 
+    padding: 5%; 
+    max-width: 100%; 
+    margin: 0 auto; 
+    border-bottom: 2px solid black;
+}
+
+.sana_collection .text {
+    text-align: left; 
+}
+
+.sana_collection h1 {
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    font-family: 'EB Garamond';
+}
+
+.sana_collection p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    width: 70%;
+    text-align: left;
+}
+
+.sana_collection img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}   
+.sana_collection a {
+    background-color: transparent;
+    padding: 15px;
+    color: #B8860B;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #B8860B;
+    
+}
+
+.sana_image {
+    display: grid;
+    place-items: center;
+}
+
+.sana_image img {
+    transition: opacity 0.6 ease;
+    border: 1px solid #B8860B;
+}
+
+.sana_image img:nth-child(1) {
+  grid-area: 1 / 1;
+  z-index: 4; 
+}
+
+.sana_image img:nth-child(2) {
+  grid-area: 1 / 1; 
+  z-index: 3; 
+  position: relative;
+}
+.sana_image img:nth-child(3) {
+    grid-area: 1 / 1; 
+    z-index: 2; 
+    position: relative;
+}
+.sana_image img:nth-child(4) {
+    grid-area: 1 / 1; 
+    z-index: 1; 
+    position: relative;
+}
+
+.sana_image img {
+    width: 100%; 
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    animation: fade 16s infinite; 
+}
+
+.sana_image img:nth-child(1) {
+    z-index: 4;
+    animation-delay: 0s;
+}
+
+.sana_image img:nth-child(2) {
+    z-index: 3;
+    animation-delay: 4s;
+}
+.sana_image img:nth-child(3) {
+    z-index: 2;
+    animation-delay: 8s;
+}
+.sana_image img:nth-child(4) {
+    z-index: 1;
+    animation-delay: 12s;
+}
+
+.momo_collection {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+    align-items: center; 
+    padding: 5%; 
+    max-width: 100%; 
+    margin: 0 auto; 
+
+}
+
+.momo_collection .text {
+    text-align: left; 
+}
+
+.momo_collection h1 {
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    font-family: 'EB Garamond';
+}
+
+.momo_collection p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    width: 70%;
+    text-align: left;
+}
+
+.momo_collection img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+}   
+.momo_collection a {
+    background-color: transparent;
+    padding: 15px;
+    color: #B8860B;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #B8860B;
+    
+}
+.momo_image {
+    display: grid;
+    place-items: center;
+}
+
+.momo_image img {
+    transition: opacity 0.6 ease;
+    border: 1px solid #B8860B;
+}
+
+.momo_image img:nth-child(1) {
+  grid-area: 1 / 1;
+  z-index: 4; 
+}
+
+.momo_image img:nth-child(2) {
+  grid-area: 1 / 1; 
+  z-index: 3; 
+  position: relative;
+}
+.momo_image img:nth-child(3) {
+    grid-area: 1 / 1; 
+    z-index: 2; 
+    position: relative;
+}
+.momo_image img:nth-child(4) {
+    grid-area: 1 / 1; 
+    z-index: 1; 
+    position: relative;
+}
+
+.momo_image img {
+    width: 100%; 
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    animation: fade 16s infinite; 
+}
+
+.momo_image img:nth-child(1) {
+    z-index: 4;
+    animation-delay: 0s;
+}
+
+.momo_image img:nth-child(2) {
+    z-index: 3;
+    animation-delay: 4s;
+}
+.momo_image img:nth-child(3) {
+    z-index: 2;
+    animation-delay: 8s;
+}
+.momo_image img:nth-child(4) {
+    z-index: 1;
+    animation-delay: 12s;
+}
+.mina_collection a:hover,
+.sana_collection a:hover,
+.momo_collection a:hover {
+    
+    background-color: #B8860B;
+    color: wheat;
+}
+
+
+.about {
+    padding: 50px 0;
+    text-align: center;
+    position: relative;
+}
+
+.about_content {
+    padding: 100px 0;
+    text-align: center;
+    font-family: 'EB Garamond';
+    background-color: #e4e1e1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    
+}
+.about_content h1 {
+    font-size: 30px;
+    color: black;
+    font-weight: 100;
+    width: 50%;
+
+}
+.about_content p {
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 960px) {
+    nav .checkbox {
+        display: block;
+    }
+
+    ul {
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 85px);
+        left: -100%;
+        top: 85px;
+        background: rgba(255, 255, 255, 0.1); 
+        backdrop-filter: blur(10px); 
+        -webkit-backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+        transition: left 0.3s ease-in-out;
+        color: #000;
+    }
+
+    nav #check:checked ~ ul {
+        left: 0;
+    }
+
+    ul li a {
+        font-size: 1.25rem;
+    }
+    .landing-page {
+        background-image: url(library/mina-2.jpeg) !important;
+        animation: mobile 10s infinite ease-in-out !important;
+    }
+    .content {
+        position: absolute;
+        top: 45%;
+        left: 60%;
+        
+    }
+    
+}
