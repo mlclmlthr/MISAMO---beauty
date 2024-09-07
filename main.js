@@ -80,3 +80,4 @@ trends.addEventListener('mousemove', (e) => {
     trends.scrollLeft = scrollLeft - walk;
 });
 
+
